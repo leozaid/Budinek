@@ -1,25 +1,21 @@
 <html lang="en">
+<head>
+<title>Acesso a coord.Mnto.</title>
+<link href="css/style.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/4759086155.js" crossorigin="anonymous"></script>
+</head>
 <body>
-<title>Acceso.privada</title>
+<header>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-<div style="margin:20px; margin-top:5px; border: 1px solid #3bbfe7;" class="codebox">
-<dt style="height:22px; text-align: center;"><strong>BIENVENIDO_COLABORADOR:</strong>
-<input type="button" value="INICIAR" style="width:78px; font-size:10px; margin:0px; padding:0px;" onclick="var BIENVENIDO_COLABORADOR= $(this).parents('.codebox').find('.content').toggle('slow');
-if ( this.value == 'CERRAR' ) { this.value = 'INICIAR'; } else { this.value = 'CERRAR'; };
-return false;"></dt>
-<dd><div class="content" name="Acesso privada" style="display: none;"><br>
-<center> Bienvenido colaborador BNE.<br>
+<center><h1>Bienvenido</h1>
+<h2>Contador Jorge</h2>
+   
 
-<div>
-<img src="index/budinek.png" width="450" height="250/">
-</div>
- 
 <div class="interior">
 <a href="" class="logo"><img src="img/budinek.jfif" alt=""></a>
 <nav class="navegacion">
 <ul>
-<a href="index.html">Inicio</a>
+<li><a href="index.html">Inicio</a></li>
 <li><a href="pagina.html">Acesso a privada</a></li>
 <li><a href="pagina2.html">Datos Personales</a></li>
 <li><a href="pagina3.html">Rep.contrab.</a></li>
@@ -30,8 +26,83 @@ return false;"></dt>
 </ul>
 </nav>
 </div>
- 
- </center>
-</div></dd></div>
+
+<!-- Contenedor Principal -->
+  <div class="comments-container">
+    <h1>Colaboradores</h1>
+
+    <ul id="comments-list" class="comments-list">
+      <li>
+        <div class="comment-main-level">
+          <!-- Avatar -->
+          <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+          <!-- Contenedor del Comentario -->
+          <div class="comment-box">
+            <div class="comment-head">
+              <h6 class="comment-name by-author"><a href="https://forms.gle/fS6KwcJCyh4eVhiNA">Jorge Luis Araiza Corres</a></h6>    
+
+            </div>
+            <div class="comment-content">
+              Edad: 30 <br>
+			  Horario: 9:00 a.m - 5:00p.m
+            </div>
+          </div>
+        </div>
+
+        <ul class="comments-list reply-list">
+          <li>
+
+            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+
+            <div class="comment-box">
+              <div class="comment-head">
+                <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
+
+              </div>
+              <div class="comment-content">
+              Edad: 30 <br>
+			  Horario: 9:00 a.m - 5:00p.m
+            </div>
+            </div>
+          </li>
+
+          <li>
+            <!-- Avatar -->
+            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+            <!-- Contenedor del Comentario -->
+            <div class="comment-box">
+              <div class="comment-head">
+                <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+              </div>
+             <div class="comment-content">
+              Edad: 30 <br>
+			  Horario: 9:00 a.m - 5:00p.m
+            </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="comment-main-level">
+          <!-- Avatar -->
+          <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+          <!-- Contenedor del Comentario -->
+          <div class="comment-box">
+            <div class="comment-head">
+              <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
+
+            </div>
+            <div class="comment-content">
+              Edad: 30 <br>
+			  Horario: 9:00 a.m - 5:00p.m
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+   </center>
+</header>
  </body>
  </html>
