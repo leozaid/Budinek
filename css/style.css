@@ -228,8 +228,8 @@ body {
   border-radius: 0 0 4px 4px;
 }
 
-.comment-box .comment-name.by-Administrador, .comment-box .comment-name.by-Administrador a {color: #03658c;}
-.comment-box .comment-name.by-Administrador:after {
+.comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
+.comment-box .comment-name.by-author:after {
   content: 'autor';
   background: #03658c;
   color: #FFF;
