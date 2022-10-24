@@ -1,100 +1,50 @@
-<html lang="es">
+<html>
 
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Acesso</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0">
-<meta name="theme-color" content="#f4f4f4">
-<meta name="msapplication-navbutton-color" content="#f4f4f4">
-
-	<link rel="shortcut icon" href="skins/elastic/images/favicon.ico?s=1664555438">
-
-	<link rel="stylesheet" href="skins/elastic/deps/bootstrap.min.css?s=1664555438">
-			<link rel="stylesheet" href="skins/elastic/styles/styles.css?s=1664555438">
-		
-	<link rel="stylesheet" type="text/css" href="plugins/jqueryui/themes/elastic/jquery-ui.css?s=1664555438">
-<script src="program/js/jquery.min.js?s=1664555438"></script>
-<script src="program/js/common.min.js?s=1664555438"></script>
-<script src="program/js/app.min.js?s=1664555438"></script>
-<script src="program/js/jstz.min.js?s=1664555438"></script>
-<script>
-/*
-        @licstart  The following is the entire license notice for the 
-        JavaScript code in this page.
-
-        Copyright (C) The Roundcube Dev Team
-
-        The JavaScript code in this page is free software: you can redistribute
-        it and/or modify it under the terms of the GNU General Public License
-        as published by the Free Software Foundation, either version 3 of
-        the License, or (at your option) any later version.
-
-        The code is distributed WITHOUT ANY WARRANTY; without even the implied
-        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-        See the GNU GPL for more details.
-
-        @licend  The above is the entire license notice
-        for the JavaScript code in this page.
-*/
-var rcmail = new rcube_webmail();
-rcmail.set_env({"task":"login","standard_windows":false,"locale":"es_ES","devel_mode":null,"rcversion":10413,"cookie_domain":"","cookie_path":"/","cookie_secure":true,"skin":"elastic","blankpage":"skins/elastic/watermark.html","refresh_interval":60,"session_lifetime":600,"action":"","comm_path":"./?_task=login","compose_extwin":false,"date_format":"yy-mm-dd","date_format_localized":"YYYY-MM-DD","request_token":"Na8caKncqm5Z2tKXAeHQncMua1KY6GJV"});
-rcmail.add_label({"loading":"Cargando...","servererror":"¡Error del servidor!","connerror":"¡Error de conexión (fallo al intentar alcanzar el servidor)!","requesttimedout":"Ha expirado el tiempo de respuesta","refreshing":"Actualizando…","windowopenerror":"iLa ventana emergente fue bloqueada!","uploadingmany":"Cargando archivos…","uploading":"Cargando archivo...","close":"Cerrar","save":"Guardar","cancel":"Cancelar","alerttitle":"Atención","confirmationtitle":"Está seguro...","delete":"Eliminar","continue":"Continuar","ok":"OK","back":"Volver","errortitle":"¡Ha ocurrido un error!","options":"Opciones","plaintoggle":"Sólo texto","htmltoggle":"HTML","previous":"Anterior","next":"Siguiente","select":"Seleccionar","browse":"Browse","choosefile":"Choose file...","choosefiles":"Choose files..."});
-rcmail.display_message("Su sesión no es válida o ha expirado.","error",-1000);
-rcmail.gui_container("loginfooter","login-footer");rcmail.gui_object('loginform', 'login-form');
-rcmail.gui_object('message', 'messagestack');
-</script>
-
-<script src="plugins/jqueryui/js/jquery-ui.min.js?s=1664555438"></script>
-<script src="plugins/jqueryui/js/i18n/jquery.ui.datepicker-es.js?s=1664555438"></script>
-
+  <meta charset="UTF-8">
+  <title>PRUEBA LOGIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="css/style.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/index.js"></script>
 </head>
-<body class="task-login action-none">
-			<div id="layout">
-	
 
-<h1 class="voice">Roundcube Webmail Iniciar sesión</h1>
-
-<div id="layout-content" class="selected no-navbar" role="main">
-	<img src="skins/elastic/images/logo.svg?s=1664555438" id="logo" alt="Logo">
-	<form id="login-form" name="login-form" method="post" class="propform" action="./?_task=login">
-<input type="hidden" name="_token" value="Na8caKncqm5Z2tKXAeHQncMua1KY6GJV">
-	<input type="hidden" name="_task" value="login"><input type="hidden" name="_action" value="login"><input type="hidden" name="_timezone" id="rcmlogintz" value="_default_"><input type="hidden" name="_url" id="rcmloginurl" value="_task=mail&amp;_mbox=INBOX"><table><tbody><tr><td class="title"><label for="rcmloginuser">Nombre de usuario</label>
-</td>
-<td class="input"><input name="_user" id="rcmloginuser" required size="40" autocapitalize="off" autocomplete="off" type="text"></td>
-</tr>
-<tr><td class="title"><label for="rcmloginpwd">Contraseña</label>
-</td>
-<td class="input"><input name="_pass" id="rcmloginpwd" required size="40" autocapitalize="off" autocomplete="off" type="password"></td>
-</tr>
-</tbody>
-</table>
-<p class="formbuttons"><button type="submit" id="rcmloginsubmit" class="button mainaction submit">Iniciar sesión</button>
-</p>
-
-		<div id="login-footer" role="contentinfo">
-			Roundcube Webmail
-			
-						
-		</div>
-	</form>
-</div>
-
-<noscript>
-	<p class="noscriptwarning">Advertencia: ¡Este servicio de webmail necesita Javascript! Para poder usarlo habilite el soporte de Javascript en su navegador, por favor.</p>
-</noscript>
-
-</div>
-<div id="messagestack"></div>
-<script>
-$(function() {
-rcmail.init();
-});
-</script>
-
-
-
-<script src="skins/elastic/deps/bootstrap.bundle.min.js?s=1664555438"></script>
-<script src="skins/elastic/ui.min.js?s=1664555438"></script>
-
+<body>
+  <div class="fondo">
+    <div class="posicion_login">
+      <div class="container">
+        <div class="form_login">
+          <div class="modelo_input">
+            <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+              </svg>
+            <input type="text" class="tipo_input name" placeholder="Usuario" />
+          </div>
+          <div class="modelo_input">
+            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+              </svg>
+            <input type="password" class="tipo_input pass" placeholder="Contraseña" />
+          </div>
+          <button type="button" class="login__submit">Sign in</button>
+          <p class="login__signup">No tienes Cuenta? &nbsp;<a>Registrarse</a></p>
+        </div>
+        <ul class="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
