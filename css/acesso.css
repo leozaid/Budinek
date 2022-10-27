@@ -20,7 +20,7 @@ body, html {
 
 /* ENLACES */
 a {
-  color:#65D0FE ;
+  color:#FFF;
   cursor: pointer;
   display: block;
   padding: 1rem 1.5rem;
@@ -37,7 +37,7 @@ a:hover {
 ****************************************************/
 /* Barra de navegacion (contiene al nav mini menu) */
 .navbar-menu {
-  background-color: #F08080;
+  background-color:#65D0FE ;
   margin: 2% auto;
   max-width: 1000px;
   width: calc(100%);
