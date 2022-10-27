@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: segoe ui;
+  font-size: 100%;
+  height: 100%;
+}
+
+/* ****************************************************
+                        CONTENEDOR
+******************************************************/
+.container {
+  background: url("https://subtlepatterns.com/patterns/ricepaper.png");
+  min-height: 100%;
+  overflow: auto;
+}
+
+/* ENLACES */
+a {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  transition: background-color .16s ease-in;
+}
+
+a:hover {
+  background-color: #CD5C5C;
+}
+
+/* **************************************************
+        BARRA DE NAVEGACION Y MENU NORMAL
+****************************************************/
+/* Barra de navegacion (contiene al nav mini menu) */
+.navbar-menu {
+  background-color: #F08080;
+  margin: 2% auto;
+  max-width: 1000px;
+  width: calc(100%);
+}
+
+/* Menu */
+.navbar-menu .menu {
+  display: block;
+  text-align: center;
+}
+
+/* List items*/
+.navbar-menu .menu li {
+  display: inline-block;
+}
+
+/* Cuando se haga hover sobre el item el submenu se activa
+ en caso tuviese */
+.navbar-menu .menu li:hover > .submenu {
+  display: block;
+  -webkit-animation-name: showSubMenu;
+  -webkit-animation-duration: .4s;
+}
+
+/* Submenus*/
+.navbar-menu .menu li ul {
+  background-color: #f08080;
+  display: none;
+  position: absolute;
+}
+
+/* List items de submenus */
+.navbar-menu .menu li ul li {
+  display: block;
+}
+
+.navbar-menu .menu li ul li a:active {
+  -webkit-animation-name: hideSubMenu;
+  -webkit-animation-duration: .4s;
+}
+
+/******************************************************
+                        MINI MENU
+******************************************************/
+/* Mini menu */
+.navbar-mini-menu {
+  background-color: #f08080;
+  display: none;
+}
+
+/* Bloque que tiene el boton para desplegar el mini menu */
+.navbar-mini-menu .menu-select {
+  color: #fff;
+  padding: 1rem 1.5rem;
+}
+
+/* Span que contiene el icono*/
+.navbar-mini-menu .menu-select .btn-select {
+  background: url("https://imgur.com/VbcTojM.png") no-repeat;
+  cursor: pointer;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 10px;
+  top: 10px;
+}
+
+/* Lista del mini menu */
+.navbar-mini-menu .mini-menu-options {
+  display: block;
+}
+
+/* Items del mini menu */
+.navbar-mini-menu .mini-menu-options li {
+  display: block;
+}
+
+/* Submenus de los items del mini menu */
+.navbar-mini-menu .mini-menu-options li .submenu {
+  display: none;
+}
+
+.navbar-mini-menu .mini-menu-options li:focus {
+  outline: 0;
+}
+
+.navbar-mini-menu .mini-menu-options li:focus > .submenu {
+  display: block;
+  -webkit-animation-name: showSubMenu;
+  -webkit-animation-duration: .4s;
+}
+
+/* Enlaces del mini menu */
+.navbar-mini-menu .mini-menu-options li a {
+  display: block;
+  padding: 1rem 1.5rem;
+}
+
+/* ***************************************************
+                      ANIMACIONES
+*****************************************************/
+@-webkit-keyframes showSubMenu {
+    0% {
+      transform: scale(0,0);
+    }
+  100% {
+    transform: scale(1,1);
+  }
+}
+
+@-webkit-keyframes hideSubMenu {
+  0% {
+    transform: scale(1,1);
+  }
+  100% {
+    transform: scale(0,0);
+  }
+}
+
+/*****************************************************                       MEDIAQUERIES
+*****************************************************/
+@media screen and (max-width: 750px) {
+  /* Elimina los margenes al nav */
+  .navbar-menu {
+    margin: 0;
+  }
+  
+  /* Esconde el menu normal */
+  .navbar-menu .menu {
+    display: none;
+  }
+  
+  /* Muestra el mini menu */
+  .navbar-mini-menu {
+    display: block;
+  }
+  
+  /* Esconde la lista del mini menu */
+  .navbar-mini-menu .mini-menu-options {
+    display: none;
+  }
+  
+}
