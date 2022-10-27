@@ -37,7 +37,7 @@ a:hover {
 ****************************************************/
 /* Barra de navegacion (contiene al nav mini menu) */
 .navbar-menu {
-  background-color:#65D0FE ;
+  background-color:#f08080 ;
   margin: 2% auto;
   max-width: 1000px;
   width: calc(100%);
