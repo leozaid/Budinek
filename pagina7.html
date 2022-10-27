@@ -1,72 +1,64 @@
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 09 - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/d37c5443c6.js" crossorigin="anonymous"></script>
+
+</head>
+
 <body>
-<title>Acesso a Gerencia</title>
-  
-    <link rel="stylesheet" href="css/acesso.css">
 
-<main class="container">
-  <header>
-    <nav class="navbar-menu">
-      
-      <!-- Menu normal -->
-      <ul class="menu">
-        <li><a>Home</a>
-        </li><li><a>Menu 1</a>
-          <!--<ul class="submenu two">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>-->
-        </li><li><a>Menu 2</a>
-          <ul class="submenu three">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li><li><a>Menu 3</a>
-          <!--<ul class="submenu four">
-            <li><a>SubMenu 1</a></li>
-            <li><a>SubMenu 2</a></li>
-          </ul>-->
-        </li><li><a>About</a>
-          <ul class="submenu five">
-            <li><a>Contact me</a></li>
-            <li><a>About me</a></li>
-          </ul>
-        </li>
-      </ul>
-      
-      <!-- Mini Menu -->
-      <nav class="navbar-mini-menu">
-        <div class="menu-select">
-          <span class="menu-actual">
-            Menu
-          </span>
-          <span class="btn-select">
-            
-          </span>
-        </div>
-        <ul class="mini-menu-options">
-          <li><a>Home</a></li>
-          <li tabIndex="0"><a>Menu 1</a></li>
-          <li tabIndex="0"><a>Menu 2</a>
-            <ul class="submenu five">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </li>
-          <li tabIndex="0"><a>Menu 3</a></li>
-          <li tabIndex="0"><a>About</a>
-            <ul class="submenu five">
-              <li><a>Contact me</a></li>
-              <li><a>About me</a></li>
-            </ul>
-          </li>
-          
-        </ul> <!-- Fin lista mini menu -->
-      </nav> <!-- Fin mini menu -->
-      
-    </nav> <!-- Fin menu general (nav) -->
-  </header>
-</main>
+  <div class="container centered">
+    <header class="perfil">
+      <img src="https://avatars.githubusercontent.com/u/46529244?v=4" alt="">
+      <div class="title">
+        <h1>Lais Golin</h1>
+        <h3>Computer Science Student</h3>
+        <p>#imersaodev #alura</p>
 
-  </body>
- </html>
+        <!-- Icons -->
+        <a title="Codepen" class="link-icon" target="_blank" href="https://codepen.io/golin">
+          <i class="fab fa-codepen"></i>
+        </a>
+
+        <a title="GitHub" class="link-icon" target="_blank" href="https://github.com/lgolin">
+          <i class="fab fa-github-square"></i>
+        </a>
+
+        <a title="Linkedin" class="link-icon" target="_blank" href="https://www.linkedin.com/in/laisgolin/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a title="Twitter" class="link-icon" target="_blank" href="https://twitter.com/laisgolin">
+          <i class="fab fa-twitter-square"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- estrutura do projeto -->
+    <main class="projetos">
+      <div class="container-projetos">
+        <h4>Projetos</h4>
+        <p class="line-1 anim-typewriter">Projetos desenvolvidos durante a Imersão Dev da Alura </p>
+        <ol>
+          <li><a href="https://codepen.io/golin/full/PojjBbR" target="_blank"> 🔢 Calculadora de Médias</a></li>
+          <li><a href="https://codepen.io/golin/full/PojOGma" target="_blank"> 💰 Conversor de Moedas</a></li>
+          <li><a href="https://codepen.io/golin/full/WNOXoQb" target="_blank"> 🔮 Mentalista</a></li>
+          <li><a href="https://codepen.io/golin/full/BaZYjNZ" target="_blank"> 🎬 AluraFlix</a></li>
+          <li><a href="https://codepen.io/golin/full/MWoGWrJ" target="_blank"> 🏆 Tabela de Classificação</a></li>
+          <li><a href="https://codepen.io/golin/full/gORKEzQ" target="_blank"> 🃏 Super Trunfo</a></li>
+          <li><a href="https://codepen.io/golin/full/xxrabdp" target="_blank"> 🆔 CertifiCard</a></li>
+        </ol>
+      </div>
+
+    </main>
+  </div>
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>
