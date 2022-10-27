@@ -1,183 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-  font-family: segoe ui;
-  font-size: 100%;
-  height: 100%;
+:root {
+  --font: "Montserrat", sans-serif;
+
+  --font-color: #1c1c1c;
+
+  --bg-color: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  --bg-card: #ecf4ff;
+  --bg-projetc: rgba(192, 192, 192, 0.6);
+
+  --grey: #44475a;
+  --orange: #ffb86c;
+  --purple: #bd93f9;
 }
 
-/* ****************************************************
-                        CONTENEDOR
-******************************************************/
+/*===== Body =====*/
+
+body {
+  background: var(--bg-color) no-repeat;
+  background-size: auto;
+  font-family: var(--font);
+  height: 100vh;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
 .container {
-  background: url("https://subtlepatterns.com/patterns/ricepaper.png");
-  min-height: 100%;
-  overflow: auto;
+  width: 600px;
+  background: var(--bg-card);
+  color: var(--title-color);
+
+  padding: 3rem;
+
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  display: block;
 }
 
-/* ENLACES */
-a {
-  color:#FFF;
-  cursor: pointer;
-  display: block;
-  padding: 1rem 1.5rem;
+/*===== Header =====*/
+.perfil {
+  display: flex;
+  align-items: center;
+}
+
+.perfil > img {
+  max-width: 10rem;
+  max-height: 10rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 21px 2px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  margin-left: 1rem;
+}
+
+.title h1 {
+  font-weight: bolder;
+  font-size: 1.8rem;
+}
+
+.title h3 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.title p {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #949494;
+  margin-bottom: 0.3rem;
+}
+
+/*==== texto animado ===== */
+.line-1 {
+  position: relative;
+  top: 50%;
+  width: 28em;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  color: var(--grey);
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 400;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 28em;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/*===== Icons ===== */
+.lista-links {
+  color: var(--title-color);
+}
+
+.link-icon {
   text-decoration: none;
-  transition: background-color .16s ease-in;
+  font-size: 1.3rem;
+  color: var(--purple);
+  transition: color 0.2s;
 }
 
-a:hover {
-  background-color: #CD5C5C;
+.link-icon:hover {
+  color: var(--orange);
 }
 
-/* **************************************************
-        BARRA DE NAVEGACION Y MENU NORMAL
-****************************************************/
-/* Barra de navegacion (contiene al nav mini menu) */
-.navbar-menu {
-  background-color:#f08080 ;
-  margin: 2% auto;
-  max-width: 1000px;
-  width: calc(100%);
+/*===== Projetos =====*/
+.projetos {
+  margin-top: 1rem;
 }
 
-/* Menu */
-.navbar-menu .menu {
-  display: block;
-  text-align: center;
+.container-projetos {
+  padding: 1.1rem 1rem;
+  background: var(--bg-projetc);
+  /*box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);*/
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
-/* List items*/
-.navbar-menu .menu li {
-  display: inline-block;
+.container-projetos h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-/* Cuando se haga hover sobre el item el submenu se activa
- en caso tuviese */
-.navbar-menu .menu li:hover > .submenu {
-  display: block;
-  -webkit-animation-name: showSubMenu;
-  -webkit-animation-duration: .4s;
+.container-projetos ol {
+  margin-left: 1rem;
+  color: var(--title);
 }
 
-/* Submenus*/
-.navbar-menu .menu li ul {
-  background-color: #f08080;
-  display: none;
-  position: absolute;
+.container-projetos li {
+  font-size: 0.9rem;
 }
 
-/* List items de submenus */
-.navbar-menu .menu li ul li {
-  display: block;
+.container-projetos a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--title);
 }
 
-.navbar-menu .menu li ul li a:active {
-  -webkit-animation-name: hideSubMenu;
-  -webkit-animation-duration: .4s;
+.container-projetos a:hover {
+  color: var(--purple);
 }
 
-/******************************************************
-                        MINI MENU
-******************************************************/
-/* Mini menu */
-.navbar-mini-menu {
-  background-color: #f08080;
-  display: none;
-}
-
-/* Bloque que tiene el boton para desplegar el mini menu */
-.navbar-mini-menu .menu-select {
-  color: #fff;
-  padding: 1rem 1.5rem;
-}
-
-/* Span que contiene el icono*/
-.navbar-mini-menu .menu-select .btn-select {
-  background: url("https://imgur.com/VbcTojM.png") no-repeat;
-  cursor: pointer;
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  right: 10px;
-  top: 10px;
-}
-
-/* Lista del mini menu */
-.navbar-mini-menu .mini-menu-options {
-  display: block;
-}
-
-/* Items del mini menu */
-.navbar-mini-menu .mini-menu-options li {
-  display: block;
-}
-
-/* Submenus de los items del mini menu */
-.navbar-mini-menu .mini-menu-options li .submenu {
-  display: none;
-}
-
-.navbar-mini-menu .mini-menu-options li:focus {
-  outline: 0;
-}
-
-.navbar-mini-menu .mini-menu-options li:focus > .submenu {
-  display: block;
-  -webkit-animation-name: showSubMenu;
-  -webkit-animation-duration: .4s;
-}
-
-/* Enlaces del mini menu */
-.navbar-mini-menu .mini-menu-options li a {
-  display: block;
-  padding: 1rem 1.5rem;
-}
-
-/* ***************************************************
-                      ANIMACIONES
-*****************************************************/
-@-webkit-keyframes showSubMenu {
-    0% {
-      transform: scale(0,0);
-    }
-  100% {
-    transform: scale(1,1);
-  }
-}
-
-@-webkit-keyframes hideSubMenu {
-  0% {
-    transform: scale(1,1);
-  }
-  100% {
-    transform: scale(0,0);
-  }
-}
-
-/*****************************************************                       MEDIAQUERIES
-*****************************************************/
-@media screen and (max-width: 750px) {
-  /* Elimina los margenes al nav */
-  .navbar-menu {
-    margin: 0;
-  }
-  
-  /* Esconde el menu normal */
-  .navbar-menu .menu {
-    display: none;
-  }
-  
-  /* Muestra el mini menu */
-  .navbar-mini-menu {
-    display: block;
-  }
-  
-  /* Esconde la lista del mini menu */
-  .navbar-mini-menu .mini-menu-options {
-    display: none;
-  }
-  
+.container-projetos li:hover {
+  color: var(--purple);
 }
