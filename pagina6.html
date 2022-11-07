@@ -1,132 +1,69 @@
 <html lang="en">
 <head>
 <title>Acesso a coord.Mnto.</title>
-<script src="https://kit.fontawesome.com/4759086155.js" crossorigin="anonymous"></script>
-</head>
-<body>
-<header>
-	
-	  <link rel="stylesheet" href="css/tabla.css">
-     <link rel="stylesheet" href="css/tabla.js">
 
-<center><h1>Bienvenido</h1>
-<h2>Contador Jorge</h2>
-	
-	  <nav role="navigation">
-  <div id="menuToggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
-    <input type="checkbox" />
-    
-    <!--
-    Some spans to act as a hamburger.
-    
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
-    <ul id="menu">
-      <a href="index.html"><li>Inicio</li></a>
-      <a href="pagina.html"><li>Acesso a privada</li></a>
-      <a href="https://forms.gle/vYuf9ZfXovszxoJN6"><li>Datos Personales</li></a>
-      <a href="https://forms.gle/Fc9Cv7FXamXpKGFGA"><li>Rep.contrab.</li></a>
-      <a href="pagina4.html" target="_blank"><li>Rep.Admin</li></a>
-      <a href="pagina5.html" target="_blank"><li>Rep.Incidencias</li></a>
-      <a href="pagina6.html" target="_blank"><li>Acesso a coord.Mnto.</li></a>
-      <a href="pagina7.html" target="_blank"><li>Acesso a Gerencia</li></a>
-    </ul>
-  </div>
-</nav>       
-  
-   
+	<template id="grid-template">
+    <table>
+        <thead>
+            <tr> <!-- para campo en columnas, programar el click sobre cada columnas -->
+                <th v-for="campo in columnas"   
+                    @click="sortBy(campo)"    
+                    :class="{ active: sortKey == campo }">
+                    {{ campo | capitalize }}
+                    <span class="arrow" :class="sortOrders[campo] > 0 ? 'asc' : 'dsc'">
+                    </span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- filterData contiene los datos filtrados -->
+            <tr v-for="entry in filteredData">
+                <td v-for="campo in columnas">  <!-- para cada campo de columnas -->
+                    {{entry[campo]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>
 
-<div class="interior">
-<a href="" class="logo"><img src="img/budinek.jfif" alt=""></a>
-<nav class="navegacion">
+<!-- demo root element -->
+<div id="demo" class="container">
+    <div class="col-sm-6"> 
+        <form id="search3">
+            Búsqueda: <input name="query" v-model="cadenaBusqueda3"></br></br>
+    </form>
+<!-- llamamos al componente y le pasamos los datos -->
+<demo-grid
+           :data="agendaDatos"
+           :columnas="columnasAgenda"
+           :filter-key="cadenaBusqueda3">
+</demo-grid>
 
-</nav>
+</br></br>
+<form id="search">
+    Búsqueda: <input name="query" v-model="cadenaBusqueda"></br>
+</form>
+</br>
+<!-- llamamos al componente y le pasamos los datos -->
+<demo-grid
+           :data="profesores"
+           :columnas="columnasProfesores"
+           :filter-key="cadenaBusqueda">
+</demo-grid>
 </div>
-
-<!-- Contenedor Principal -->
-  <div class="comments-container">
-    <h1>Colaboradores</h1>
-
-    <ul id="comments-list" class="comments-list">
-      <li>
-        <div class="comment-main-level">
-          <!-- Avatar -->
-          <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-          <!-- Contenedor del Comentario -->
-          <div class="comment-box">
-            <div class="comment-head">
-              <h6 class="comment-name by-author"><a href="https://forms.gle/fS6KwcJCyh4eVhiNA">Jorge Luis Araiza Corres</a></h6>    
-
-            </div>
-            <div class="comment-content">
-              Edad: 30 <br>
-			  Horario: 9:00 a.m - 5:00p.m
-            </div>
-          </div>
-        </div>
-
-        <ul class="comments-list reply-list">
-          <li>
-
-            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-
-            <div class="comment-box">
-              <div class="comment-head">
-                <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-
-              </div>
-              <div class="comment-content">
-              Edad: 30 <br>
-			  Horario: 9:00 a.m - 5:00p.m
-            </div>
-            </div>
-          </li>
-
-          <li>
-            <!-- Avatar -->
-            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-            <!-- Contenedor del Comentario -->
-            <div class="comment-box">
-              <div class="comment-head">
-                <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-              </div>
-             <div class="comment-content">
-              Edad: 30 <br>
-			  Horario: 9:00 a.m - 5:00p.m
-            </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <div class="comment-main-level">
-          <!-- Avatar -->
-          <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-          <!-- Contenedor del Comentario -->
-          <div class="comment-box">
-            <div class="comment-head">
-              <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-   </center>
-</header>
+<div class="col-sm-6"> 
+    <form id="search2">
+        Búsqueda: <input name="query" v-model="cadenaBusqueda2"></br>
+</form>
+</br>
+<demo-grid
+           :data="grupos"
+           :columnas="columnasGrupos"
+           :filter-key="cadenaBusqueda2">
+</demo-grid>
+</div>
+</div>
+	
+</head>
  </body>
  </html>
