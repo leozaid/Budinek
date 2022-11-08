@@ -5,68 +5,50 @@
       <link rel="stylesheet" href="css/plantilla.css">
      <link rel="stylesheet" href="js/plantilla.js">
 	
-	<template id="grid-template">
-    <table>
-        <thead>
-            <tr> <!-- para campo en columnas, programar el click sobre cada columnas -->
-                <th v-for="campo in columnas"   
-                    @click="sortBy(campo)"    
-                    :class="{ active: sortKey == campo }">
-                    {{ campo | capitalize }}
-                    <span class="arrow" :class="sortOrders[campo] > 0 ? 'asc' : 'dsc'">
-                    </span>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- filterData contiene los datos filtrados -->
-            <tr v-for="entry in filteredData">
-                <td v-for="campo in columnas">  <!-- para cada campo de columnas -->
-                    {{entry[campo]}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</template>
-
-<!-- demo root element -->
-<div id="demo" class="container">
-    <div class="col-sm-6"> 
-        <form id="search3">
-            Búsqueda: <input name="query" v-model="cadenaBusqueda3"></br></br>
-    </form>
-<!-- llamamos al componente y le pasamos los datos -->
-<demo-grid
-           :data="agendaDatos"
-           :columnas="columnasAgenda"
-           :filter-key="cadenaBusqueda3">
-</demo-grid>
-
-</br></br>
-<form id="search">
-    Búsqueda: <input name="query" v-model="cadenaBusqueda"></br>
-</form>
-</br>
-<!-- llamamos al componente y le pasamos los datos -->
-<demo-grid
-           :data="profesores"
-           :columnas="columnasProfesores"
-           :filter-key="cadenaBusqueda">
-</demo-grid>
-</div>
-<div class="col-sm-6"> 
-    <form id="search2">
-        Búsqueda: <input name="query" v-model="cadenaBusqueda2"></br>
-</form>
-</br>
-<demo-grid
-           :data="grupos"
-           :columnas="columnasGrupos"
-           :filter-key="cadenaBusqueda2">
-</demo-grid>
-</div>
-</div>
+	<div class="table-content">
+        <table class="table table-borded table-responsive table-striped " id="table-list">
+            <thead class="table-dark">
+                <tr>
+                    <td>Name</td>
+                    <td>Gental</td>
+                    <td>eMail</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>James</td>
+                    <td>Male</td>
+                    <td>jhsdfgh@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td>Sams</td>
+                    <td>Male</td>
+                    <td>hhfdfg@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>Female</td>
+                    <td>vccch@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Ashly</td>
+                    <td>Female</td>
+                    <td>asss@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Eden</td>
+                    <td>Male</td>
+                    <td>edd@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td>Daisy</td>
+                    <td>Female</td>
+                    <td>hhdf@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-info" id="add"><span class="glyphicon glyphicon-plus-sign"></span>Add New Members</button>
+    </div>
 	
 </head>
- </body>
  </html>
