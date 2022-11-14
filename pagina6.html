@@ -1,267 +1,453 @@
-<html lang="en">
-<head>
-<title>Acesso a cordinacion.Monitor.</title>
-	
-	<style>
-		body
-{
-  margin: 0;
-  padding: 0;
-  
-  /* make it look decent enough */
-  background: #232323;
-  color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Acesso a cordinacion de Monitor</title>				
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    </head>
+
+    <body>
+        <div style="display:flex; flex-direction:column;">
+            <h1 style="margin-bottom:50px;">Cordinacion de Mantenimiento y Jardineria</h1>
+
+        </div>
+
+        <table id="report_ordes_table" class="display" style="width:90%">
+                <thead>
+                    <tr>
+					    <th>Numero</th>
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Puesto</th>
+                        <th>Privada</th>					
+                    </tr>
+                </thead>
+        </table>		
+		
+		<script language="Javascript">  var data = [
+                [
+                    '001',
+                    'Leonel',
+                    'Gonzales',
+                    'Alvarez',
+                    'Axuliar de Mantenimiento',  				
+                ],
+                [
+                    '002',
+                    'Susana Francisca',
+                    'Alvarez',
+                    'Lozano',
+                    'Axuliar de Limpieza',
+                ],
+                [
+                    '003',
+                    'Esmeralda',
+                    'Olvera',
+                    'Hernandez',
+                    'Axuliar de Limpieza',
+                ],
+                [
+                   '004',
+                    'Ximena',
+                    'Vargas',
+                    'Alvarez',
+                    'Axuliar de Limpieza',
+                ],
+                [
+                    
+                    '005',
+                    'Nayeli',
+                    'Espinoza',
+                    'Alvarez',
+                    'Axuliar de Limpieza',
+                ],
+                [
+                    '006',
+                    'Irma Patricia ',
+                    'León',
+                    'Muñoz',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '007',
+                    'Daniel',
+                    'Perez',
+                    'Cruz',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '008',
+                    'Mercedes',
+                    'Mórales',
+                    'Pimentel',
+                    'Axuliar de Mantenimiento',
+                ],
+				[
+                    '009',
+                    'Ana María ',
+                    'Flores',
+                    'Hernandez',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '010',
+                    'Susana',
+                    'Ascencíon',
+                    'Adaya',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '011',
+                    'Jorge',
+                    'Monroy',
+                    'Villalobos',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '012',
+                    'Laura',
+                    'Vazquez',
+                    'Sanchez',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '013',
+                    'Isidro',
+                    'Hernández',
+                    'Martínez',
+                    'Axuliar de Mantenimiento',
+                ],
+				[
+                    '014',
+                    'Erick Rosendo',
+                    'Sánchez',
+                    'Álvarez',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '015',
+                    'Irving Alejandro',
+                    'Mendoza',
+                    'Canales',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '016',
+                    'Marcos',
+                    'Pardiñas',
+                    'Heredia',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '017',
+                    'Arturo',
+                    'Vera',
+                    'Landaverde',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '018',
+                    'Gustavo',
+                    'Ramirez',
+                    'Espinoza',
+                    'Axuliar de Limpieza',
+                ],
+				[
+                    '019',
+                    'Pofiria',
+                    'Pérez',
+                    'Ángeles',
+                    'Axuliar de Mantenimiento',
+                ],
+					[
+                    '020',
+                    'Jose Alfredo',
+                    'Ramirez',
+                    'Gracia',
+                    'Axuliar de Mantenimiento',
+                ],
+					[
+                    '021',
+                    'Virginia',
+                    'Campero',
+                    'Garnica',
+                    'Axuliar de Mantenimiento',
+                ],
+				[
+                    '022',
+                    'Alma  Maite',
+                    'Cruz',
+                    'Hernández',
+                    'Axuliar de Limpieza',
+                ],
+					[
+                    '023',
+                    'Yaneth',
+                    'Garnica',
+                    'Cruz',
+                    'Axuliar de Limpieza',
+                ],
+					[
+                    '024',
+                    'Lizbeth',
+                    'Hernández',
+                    'Islas',
+                    'Axuliar de Limpieza',
+                ],
+					[
+                    '025',
+                    'Lizbeth',
+                    'Martinez',
+                    'Cruz',
+                    'Axuliar de Limpieza',
+                ],
+					[
+                    '026',
+                    'Holda Soledad',
+                    'Sánchez',
+                    'Alvarez',
+                    'Axuliar de Limpieza',
+                ],
+					[
+                    '027',
+                    'Daniela',
+                    'Vargas',
+                    'Hernández',
+                    'Axuliar de Limpieza',
+                ],
+            ];
+            
+            var minDate = null;
+            var maxDate = null;
+            var modalTable = null;
+            var table = null;
+
+            function openModalDetails (){
+                modalTable.clear();
+                modalTable.rows.add(modalData);
+                modalTable.draw();
+               $('#detail_modal').modal();
+            }
+
+
+            $(document).ready( function () {
+                //Configura el texto a mostrar en los recuadros de busqueda de la tabla
+                $('#report_ordes_table thead th').each( function () {
+                    var title = $(this).text();
+                    $(this).html( '<h3>' + $(this).text() + '</h3>' + '<input type="text" placeholder="Buscar" />' );
+                } );
+
+    
+
+                //Declaración de la tabla de estatus de pedidos
+                table = $('#report_ordes_table').DataTable({
+                    data: data, //Objeto para el pase de la infromación a mostrar
+                    language: { //Se configuran las traducciones del texto que se muestra en cada reporte
+                        lengthMenu: 'Mostrar _MENU_ elementos por página',
+                        zeroRecords: 'No se encontraron registros',
+                        info: 'Mostrando página _PAGE_ de _PAGES_',
+                        infoEmpty: 'No se encontro ningin registro',
+                        infoFiltered: '(Resultados de la busqueda : _MAX_  )'
+                    },
+                    columnDefs: [ {
+                        targets: -1,
+                        data: null,
+                        defaultContent: '<a id="#open_modal_details" onClick="openModalDetails()"" class="link">Abrir detalle</p>'
+                    }]
+                });
+
+
+                // Agrega los campos para fltrar en las columnas
+                table.columns().every( function () {
+                    var that = this;
+            
+                    $( 'input', this.header() ).on( 'keyup change', function () {
+                        if ( that.search() !== this.value ) {
+                            that
+                                .search( this.value )
+                                .draw();
+                        }
+                    });
+                });
+
+                //Valida los rangos de fechas dados por el usuario
+                $.fn.dataTable.ext.search.push(
+                    function( settings, data, dataIndex ) { 
+                        //Agregar un buscar la columna de fecha para el filtro
+                        var date = new Date(data[1]).getTime() || null; // use data for the age column
+                
+                        if(minDate === null && maxDate === null){
+                            return true;
+                        }else if(minDate !== null && maxDate === null){//Si se pasa sólo la fecha mínima
+                            if(date >= minDate){
+                                return true;
+                            };
+                        }else if (minDate === null && maxDate !== null){ //Si se pasa sólo la fecha máxima
+                            if(date <= maxDate){
+                                return true;
+                            };
+                        }else if(date >= minDate && date <= maxDate){//Si se pasan ambas fechas
+                            if(date >= minDate && date <= maxDate){
+                                return true;
+                            };
+                        };
+
+                        return false;
+                    }
+                );
+
+                //Función que se encarga del filtrado de los registros
+               $( "#filter_button" ).click(function() {
+                    minDate = new Date($('#begin_date').val()).getTime() || null;
+                    maxDate = new Date($('#end_date').val()).getTime() || null;
+                    
+                    table.draw();                  
+                });
+
+                
+            });</script>
+
+		<style>
+		* {
+  font-family: 'Titillium Web', sans-serif;
 }
 
-#menuToggle
-{
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
-  
-  z-index: 1;
-  
-  -webkit-user-select: none;
-  user-select: none;
+.date-picker {
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+  margin-right: 20px;
+  padding: 0px 15px;
 }
 
-#menuToggle a
-{
-  text-decoration: none;
-  color: #232323;
-  
-  transition: color 0.3s ease;
+.date-picker:focus {
+  outline: none;
 }
 
-#menuToggle a:hover
-{
-  color: tomato;
+.filter-button {
+  width:6rem; 
+  border-radius:20px; 
+  height:2.5rem; 
+  background-color:#003773; 
+  border:none; 
+  color:white; 
+  font-size: 1rem; 
+  cursor:pointer;
 }
 
+.filters-container {
+  margin-bottom: 3rem;
+}
 
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  
+.selector-class {
+  border-radius: 20px;
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+}
+
+.link {
+  color: #003773;
+  text-decoration: underline;
   cursor: pointer;
-  
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-  
-  -webkit-touch-callout: none;
 }
 
-/*
- * Just a quick hamburger
- */
-#menuToggle span
-{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  
-  background: #cdcdcd;
-  border-radius: 3px;
-  
-  z-index: 1;
-  
-  transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+table#report_ordes_table input {
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+  padding: 0px 15px;
 }
 
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
+table#report_ordes_table input:focus {
+  outline: none;
 }
 
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
+.dataTables_filter {
+  display: none;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+select[name=report_ordes_table_length]{
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+  margin-right: 20px;
+  padding: 0px 15px;
 }
 
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
+select[name=report_ordes_table_length]:focus {
+  outline: none; 
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
+a.paginate_button.current {
+  color: white !important;
+  border-radius: 20px !important;
+  border: solid 1px #003773 !important;
+  background-color: #003773 !important;
+  background-image: none !important;
 }
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu
-{
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+a.paginate_button {
+  color: #003773 !important;
+  border-radius: 20px !important;
+  border: solid 1px #003773 !important;
+  background-color: white !important;
+  background-image: none !important;
 }
 
-#menu li
-{
-  padding: 10px 0;
-  font-size: 22px;
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  color: white !important;
 }
 
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul
-{
-  transform: none;
+a#report_ordes_table_previous.paginate_button.previous.disabled {
+  border-color: lightgrey !important;
 }
+
+a#report_ordes_table_next.paginate_button.next.disabled {
+  border-color: lightgrey !important;
+}
+
+  /* Estilos para el modal de detalle del pedido*/
+.modal {
+  max-width: 90%;
+}
+
+select[name=detail_table_modal_length] {
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+  margin-right: 20px;
+  padding: 0px 15px;
+}
+
+select[name=detail_table_modal_length]:focus {
+  outline: none;
+}
+
+a#detail_table_modal_previous.paginate_button.previous.disabled {
+  border-color: lightgrey !important;
+}
+
+a#detail_table_modal_next.paginate_button.next.disabled {
+  border-color: lightgrey !important;
+}
+
+a[href="#"] {
+    display: none;
+ }
 		</style>
-     <link rel="stylesheet" href="js/tabla.js">
-     <link rel="stylesheet" href="css/plantilla.css">
-     <link rel="stylesheet" href="js/plantilla.js ">
-	
-</head>
-	
-	<div class="table-content">
-        <table class="table table-borded table-responsive table-striped " id="table-list">
-            <thead class="table-dark">
-                <tr>
-                    <td>Name</td>
-                    <td>Gental</td>
-                    <td>eMail</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>James</td>
-                    <td>Male</td>
-                    <td>jhsdfgh@hotmail.com</td>
-                </tr>
-                <tr>
-                    <td>Sams</td>
-                    <td>Male</td>
-                    <td>hhfdfg@hotmail.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Female</td>
-                    <td>vccch@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Ashly</td>
-                    <td>Female</td>
-                    <td>asss@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Eden</td>
-                    <td>Male</td>
-                    <td>edd@hotmail.com</td>
-                </tr>
-                <tr>
-                    <td>Daisy</td>
-                    <td>Female</td>
-                    <td>hhdf@gmail.com</td>
-                </tr>
-            </tbody>
-        </table>
-        <button class="btn btn-info" id="add"><span class="glyphicon glyphicon-plus-sign"></span>Add New Members</button>
-    </div>
-	
-	<nav role="navigation">
-  <div id="menuToggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
-    <input type="checkbox" />
-    
-    <!--
-    Some spans to act as a hamburger.
-    
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
-<nav role="navigation">
-  <div id="menuToggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
-    <input type="checkbox" />
-    
-    <!--
-    Some spans to act as a hamburger.
-    
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
-    <ul id="menu">
-      <a href="index.html"><li>Inicio</li></a>
-      <a href="pagina.html"><li>Acesso a privada</li></a>
-      <a href="https://forms.gle/vYuf9ZfXovszxoJN6"><li>Datos Personales</li></a>
-      <a href="https://forms.gle/Fc9Cv7FXamXpKGFGA"><li>Rep.contrab.</li></a>
-      <a href="pagina4.html" target="_blank"><li>Rep.Admin</li></a>
-      <a href="pagina5.html" target="_blank"><li>Rep.Incidencias</li></a>
-      <a href="pagina6.html" target="_blank"><li>Acesso a cordinacion.Monitor.</li></a>
-      <a href="pagina7.html" target="_blank"><li>Acesso a Gerencia</li></a>
-    </ul>
-  </div>
-</nav> 
-</head>
- </html>
+ 
+    </body>
+</html>
