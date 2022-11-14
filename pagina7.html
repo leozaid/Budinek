@@ -1,80 +1,417 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Acesso a Gerencia</title>				
 
-<html lang="en">
-    <title>Acesso a Gerencia</title>
-      <link rel="stylesheet" href="css/acesso.css">
-      <link rel="stylesheet" href="css/tabla.css">
-     <link rel="stylesheet" href="js/tabla.js">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aula 09 - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/d37c5443c6.js" crossorigin="anonymous"></script>
-</head>
-        
-  <nav role="navigation">
-  <div id="menuToggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
-    <input type="checkbox" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    </head>
+
+    <body>
+        <div style="display:flex; flex-direction:column;">
+            <h1 style="margin-bottom:50px;">Tabla del Personal</h1>
+
+        </div>
+
+        <table id="report_ordes_table" class="display" style="width:90%">
+                <thead>
+                    <tr>
+					    <th>Numero</th>
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Puesto</th>
+                        <th>Privada</th>					
+                    </tr>
+                </thead>
+        </table>
+		
+		<script language="Javascript">  var data = [
+                [
+                    '001',
+                    'Raymundo',
+                    'Sanchez',
+                    'Alvarez',
+                    'Direccion', 					
+                ],
+                [
+                    '002',
+                    'Elba',
+                    'Nophal',
+                    'Cruz',
+                    'Gerencia Operativa y Comercial',
+                ],
+                [
+                    '003',
+                    'Jorge Luis',
+                    'Araiza',
+                    'Corres',
+                    'Gerencia de Contabilidad',
+                ],
+                [
+                   '004',
+                    'Daniela',
+                    'Be',
+                    'Duron',
+                    'Gerencia Administrativa',
+                ],
+                [
+                    
+                    '005',
+                    'Patricia',
+                    'Torres',
+                    'Jimenez',
+                    'Coord. De Mantenimiento',
+                ],
+                [
+                    '006',
+                    'Raymundo',
+                    'Sanchez',
+                    'Castillo',
+                    'Ejecutivo de Administracion',
+                ],
+				[
+                    '007',
+                    'Patricia',
+                    'Torres',
+                    'Jimenez',
+                    'Abruzzo',
+                ],
+				[
+                    '008',
+                    'Adriana',
+                    'Trejo',
+                    'Pastrana',
+                    'Corcega',
+                ],
+				[
+                    '009',
+                    'Berenice',
+                    'Moreno',
+                    'Moreno',
+                    'Florina',
+                ],
+				[
+                    '010',
+                    'Francisco',
+                    'Espinosa',
+                    'Ramirez',
+                    'Frailes',
+                ],
+				[
+                    '011',
+                    'Mayra',
+                    'Cruz',
+                    'Garcia',
+                    'Madeline',
+                ],
+				[
+                    '012',
+                    'Esbeyli Josabeth',
+                    'Marquez',
+                    'Castro',
+                    'Real de Pachuca',
+                ],
+				[
+                    '013',
+                    'Fabian',
+                    'Rochan',
+                    'Cuvas',
+                    'Jade',
+                ],
+				[
+                    '014',
+                    'Lizeth',
+                    'Luna',
+                    'Santos',
+                    'Olivenza',
+                ],
+				[
+                    '015',
+                    'Jose Angel',
+                    'Acosta',
+                    'Diaz',
+                    'Herradura',
+                ],
+				[
+                    '016',
+                    'Ana Karen',
+                    'Lara',
+                    'Morales',
+                    'Portobello',
+                ],
+				[
+                    '017',
+                    'Fernanda',
+                    'Teran',
+                    'Barberena',
+                    'Zona platenada',
+                ],
+				[
+                    '018',
+                    'Victor',
+                    'Placier',
+                    'Cantu',
+                    'Zona platenada',
+                ],
+				[
+                    '019',
+                    'Adriana',
+                    'Rodriguez',
+                    'Uribe',
+                    'Cordinadora',
+                ],
+					[
+                    '020',
+                    'Raciel',
+                    'Sanchez',
+                    'Alvarez',
+                    'Veneto',
+                ],
+					[
+                    '021',
+                    'Vianey',
+                    'Perez',
+                    'Diaz',
+                    'Volterra',
+                ],
+				[
+                    '022',
+                    'Alegandra Lizbeth',
+                    'Ortega',
+                    'Chavez',
+                    'Monte Olimpo',
+                ],
+            ];
+            
+            var minDate = null;
+            var maxDate = null;
+            var modalTable = null;
+            var table = null;
+
+            function openModalDetails (){
+                modalTable.clear();
+                modalTable.rows.add(modalData);
+                modalTable.draw();
+               $('#detail_modal').modal();
+            }
+
+
+            $(document).ready( function () {
+                //Configura el texto a mostrar en los recuadros de busqueda de la tabla
+                $('#report_ordes_table thead th').each( function () {
+                    var title = $(this).text();
+                    $(this).html( '<h3>' + $(this).text() + '</h3>' + '<input type="text" placeholder="Buscar" />' );
+                } );
+
     
-    <!--
-    Some spans to act as a hamburger.
-    
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
-    <ul id="menu">
-      <a href="index.html"><li>Inicio</li></a>
-      <a href="pagina.html"><li>Acesso a privada</li></a>
-      <a href="https://forms.gle/vYuf9ZfXovszxoJN6"><li>Datos Personales</li></a>
-      <a href="https://forms.gle/Fc9Cv7FXamXpKGFGA"><li>Rep.contrab.</li></a>
-      <a href="pagina4.html" target="_blank"><li>Rep.Admin</li></a>
-      <a href="pagina5.html" target="_blank"><li>Rep.Incidencias</li></a>
-      <a href="pagina6.html" target="_blank"><li>Acesso a cordinacion.Monitor.</li></a>
-      <a href="pagina7.html" target="_blank"><li>Acesso a Gerencia</li></a>
-    </ul>
-  </div>
-</nav>       
-  
-<body>
 
-  <div class="container centered">
-    <header class="perfil">
-      <img src="https://avatars.githubusercontent.com/u/46529244?v=4" alt="">
-      <div class="title">
-        <h1>Jorge Luis Araiza Corres</h1>
-        <h3>Oficina</h3>
-        </a>
-      </div>
-    </header>
+                //Declaración de la tabla de estatus de pedidos
+                table = $('#report_ordes_table').DataTable({
+                    data: data, //Objeto para el pase de la infromación a mostrar
+                    language: { //Se configuran las traducciones del texto que se muestra en cada reporte
+                        lengthMenu: 'Mostrar _MENU_ elementos por página',
+                        zeroRecords: 'No se encontraron registros',
+                        info: 'Mostrando página _PAGE_ de _PAGES_',
+                        infoEmpty: 'No se encontro ningin registro',
+                        infoFiltered: '(Resultados de la busqueda : _MAX_  )'
+                    },
+                    columnDefs: [ {
+                        targets: -1,
+                        data: null,
+                        defaultContent: '<a id="#open_modal_details" onClick="openModalDetails()"" class="link">Abrir detalle</p>'
+                    }]
+                });
 
-    <!-- estrutura do projeto -->
-    <main class="projetos">
-      <div class="container-projetos">
-        <h4>Datos personales</h4>
-        <p class="line-1 anim-typewriter">* Grupo Budinek</p>
-        <p class="line-1 anim-typewriter">* Gerencia Administrativa</p>
-        <p class="line-1 anim-typewriter">* zaidg4060@gmail.com</p>
-        <p class="line-1 anim-typewriter">* 5534735653</p>
-      </div>
 
-    </main>
-  </div>
-  <!-- Script -->
-  <script src="app.js"></script>
-</body>
+                // Agrega los campos para fltrar en las columnas
+                table.columns().every( function () {
+                    var that = this;
+            
+                    $( 'input', this.header() ).on( 'keyup change', function () {
+                        if ( that.search() !== this.value ) {
+                            that
+                                .search( this.value )
+                                .draw();
+                        }
+                    });
+                });
 
+                //Valida los rangos de fechas dados por el usuario
+                $.fn.dataTable.ext.search.push(
+                    function( settings, data, dataIndex ) { 
+                        //Agregar un buscar la columna de fecha para el filtro
+                        var date = new Date(data[1]).getTime() || null; // use data for the age column
+                
+                        if(minDate === null && maxDate === null){
+                            return true;
+                        }else if(minDate !== null && maxDate === null){//Si se pasa sólo la fecha mínima
+                            if(date >= minDate){
+                                return true;
+                            };
+                        }else if (minDate === null && maxDate !== null){ //Si se pasa sólo la fecha máxima
+                            if(date <= maxDate){
+                                return true;
+                            };
+                        }else if(date >= minDate && date <= maxDate){//Si se pasan ambas fechas
+                            if(date >= minDate && date <= maxDate){
+                                return true;
+                            };
+                        };
+
+                        return false;
+                    }
+                );
+
+                //Función que se encarga del filtrado de los registros
+               $( "#filter_button" ).click(function() {
+                    minDate = new Date($('#begin_date').val()).getTime() || null;
+                    maxDate = new Date($('#end_date').val()).getTime() || null;
+                    
+                    table.draw();                  
+                });
+
+                
+            });</script>
+
+		<style>
+		* {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.date-picker {
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+  margin-right: 20px;
+  padding: 0px 15px;
+}
+
+.date-picker:focus {
+  outline: none;
+}
+
+.filter-button {
+  width:6rem; 
+  border-radius:20px; 
+  height:2.5rem; 
+  background-color:#003773; 
+  border:none; 
+  color:white; 
+  font-size: 1rem; 
+  cursor:pointer;
+}
+
+.filters-container {
+  margin-bottom: 3rem;
+}
+
+.selector-class {
+  border-radius: 20px;
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+}
+
+.link {
+  color: #003773;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+table#report_ordes_table input {
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+  padding: 0px 15px;
+}
+
+table#report_ordes_table input:focus {
+  outline: none;
+}
+
+.dataTables_filter {
+  display: none;
+}
+
+select[name=report_ordes_table_length]{
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+  margin-right: 20px;
+  padding: 0px 15px;
+}
+
+select[name=report_ordes_table_length]:focus {
+  outline: none; 
+}
+
+a.paginate_button.current {
+  color: white !important;
+  border-radius: 20px !important;
+  border: solid 1px #003773 !important;
+  background-color: #003773 !important;
+  background-image: none !important;
+}
+
+a.paginate_button {
+  color: #003773 !important;
+  border-radius: 20px !important;
+  border: solid 1px #003773 !important;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  color: white !important;
+}
+
+a#report_ordes_table_previous.paginate_button.previous.disabled {
+  border-color: lightgrey !important;
+}
+
+a#report_ordes_table_next.paginate_button.next.disabled {
+  border-color: lightgrey !important;
+}
+
+  /* Estilos para el modal de detalle del pedido*/
+.modal {
+  max-width: 90%;
+}
+
+select[name=detail_table_modal_length] {
+  border: solid 1px #003773;
+  border-radius: 20px;
+  min-height: 2rem;    
+  font-size: 1rem;
+  margin-right: 20px;
+  padding: 0px 15px;
+}
+
+select[name=detail_table_modal_length]:focus {
+  outline: none;
+}
+
+a#detail_table_modal_previous.paginate_button.previous.disabled {
+  border-color: lightgrey !important;
+}
+
+a#detail_table_modal_next.paginate_button.next.disabled {
+  border-color: lightgrey !important;
+}
+
+a[href="#"] {
+    display: none;
+ }
+		</style>
+ 
+    </body>
 </html>
