@@ -1,7 +1,8 @@
 <html lang="en">
-<title>Reportes Administracion</title>
-  
-   <span ng-app="simpleCRUD" ng-controller="SimpleCRUDController">
+<body>
+<head>
+
+<span ng-app="simpleCRUD" ng-controller="SimpleCRUDController">
     <md-toolbar>
         <div class="md-toolbar-tools">
             Simple CRUD Angular Material
@@ -161,22 +162,9 @@
     </svg>
     </script>
 </span>
-  <style>
-    .full-heigth {
-    height: -moz-calc(100% - 64px); 
-    height: -webkit-calc(100% - 64px);
-    height: calc(100% - 64px);
-}
 
-.dialog-95 {
-    width: 95%;
-    height: auto;
-}
-
-  </style>
-  
-   <style>
-     (function () {
+<script language="Javascript">  
+(function () {
     'use strict';
     var app = angular.module("simpleCRUD", ['ngMessages', 'ngMaterial']);
     //Registrando iconos
@@ -446,7 +434,22 @@
         );
     }
 })();
+</script>
 
-  </style>
-  
+<script>
+.full-heigth {
+    height: -moz-calc(100% - 64px); 
+    height: -webkit-calc(100% - 64px);
+    height: calc(100% - 64px);
+}
+
+.dialog-95 {
+    width: 95%;
+    height: auto;
+}
+</script>
+
+
+</head>
+ </body>
  </html>
